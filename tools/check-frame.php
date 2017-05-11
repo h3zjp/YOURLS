@@ -48,7 +48,7 @@ if(isset($header_data['Location'])){
 <head>
 <meta charset="UTF-8" />
 <title>短縮URLを復元する｜h3x.jp URL Shortener</title>
-<!-- html は 2017/05/04 に更新 Ver. 13.0.0 -->
+<!-- html は 2017/05/12 に更新 Ver. 13.0.0 -->
 <meta name="robots" content="none" />
 <link rel="icon" type="image/x-icon" href="/media/favicon.ico" />
 <link rel="Shortcut Icon" type="image/x-icon" href="/media/favicon.ico" />
