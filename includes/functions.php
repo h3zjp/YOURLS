@@ -81,16 +81,17 @@ function yourls_keyword_is_reserved( $keyword ) {
  *
  */
 function yourls_get_IP() {
-	$ip = '';
+	// $ip = $_SERVER[ $header ];
+	$ip = $_SERVER['REMOTE_ADDR'];
 
 	// Precedence: if set, X-Forwarded-For > HTTP_X_FORWARDED_FOR > HTTP_CLIENT_IP > HTTP_VIA > REMOTE_ADDR
-	$headers = array( 'X-Forwarded-For', 'HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'HTTP_VIA', 'REMOTE_ADDR' );
+	/* $headers = array( 'X-Forwarded-For', 'HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'HTTP_VIA', 'REMOTE_ADDR' );
 	foreach( $headers as $header ) {
 		if ( !empty( $_SERVER[ $header ] ) ) {
 			$ip = $_SERVER[ $header ];
 			break;
 		}
-	}
+	} */
 	
 	// headers can contain multiple IPs (X-Forwarded-For = client, proxy1, proxy2). Take first one.
 	if ( strpos( $ip, ',' ) !== false )
@@ -2330,4 +2331,3 @@ function yourls_set_url_scheme( $url, $scheme = false ) {
     }
     return preg_replace( '!^[a-zA-Z0-9\+\.-]+://!', $scheme . '://', $url );
 }
-
